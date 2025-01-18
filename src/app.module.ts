@@ -6,7 +6,7 @@ import { BotModule } from './bot/bot.module';
 @Module({
   imports: [
     ConfigModule.forRoot({envFilePath: ".env", isGlobal: true}),
-    MongooseModule.forRoot("mongodb://localhost:27017/telegram"),
+    MongooseModule.forRoot(process.env.DATABASE_URI),
     BotModule
   ],
   controllers: [],
